@@ -124,7 +124,7 @@ export const PROJECTS: Project[] = [
     id: 2, 
     title: 'INVENTIA PLUS', 
     category: 'Imagen corporativa', 
-    image: '/images/Inventia Plus.jpg', 
+    image: './images/Inventia Plus.jpg', 
     gallery: ['/images/Inventia Plus 2.jpg', '/images/Inventia Plus 3.jpg', '/images/Inventia Plus 4.jpg'],
     date: 'Diciembre 2023' 
   },

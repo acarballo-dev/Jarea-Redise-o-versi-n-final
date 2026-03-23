@@ -76,14 +76,14 @@ export const Home = ({ onPageChange }: HomeProps) => {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
               <img 
-                src="/images/Inventia Plus.jpg" 
+                src="./images/Inventia Plus.jpg" 
                 alt="Office" 
                 className="rounded-2xl shadow-2xl"
                 referrerPolicy="no-referrer"
               />
             </div>
             <div className="lg:w-1/2 space-y-6">
-              <span className="text-teal-500 font-bold text-sm tracking-widest uppercase">About Us</span>
+              <span className="text-teal-500 font-bold text-sm tracking-widest uppercase">Nosotros</span>
               <h2 className="text-4xl font-bold text-slate-900 tracking-tight">SOBRE JAREA SOLUCIONES</h2>
               <p className="text-gray-600 leading-relaxed">
                  Jarea Soluciones es una empresa joven, pero con una dilatada experiencia en gestión de proyectos, instalaciones, equipamiento y suministro para empresas. Nuestro objetivo es convertirnos en su colaborador de confianza y juntos aportar a su compañía las mejores soluciones y productos. Nuestro trabajo no es vender productos o servicios. Cuando trabajas con nosotros, nos convertimos en parte de tu equipo. 
