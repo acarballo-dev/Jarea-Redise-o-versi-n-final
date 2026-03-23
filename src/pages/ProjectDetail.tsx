@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Project } from '../types';
 import { Icon } from '../components/Icon';
 
@@ -9,6 +9,19 @@ interface ProjectDetailProps {
 }
 
 export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = project.gallery && project.gallery.length > 0 
+    ? [project.image, ...project.gallery] 
+    : [project.image];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="pt-32 pb-24 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
@@ -21,23 +34,76 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
         </button>
 
         <div className="flex flex-col lg:flex-row gap-16">
-          {/* Left: Project Image */}
+          {/* Left: Project Image Carousel */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="lg:w-2/3"
           >
-            <div className="rounded-2xl overflow-hidden shadow-2xl bg-gray-100 aspect-video">
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800';
-                }}
-              />
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-100 aspect-video group/carousel">
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={currentImageIndex}
+                  src={images[currentImageIndex]} 
+                  alt={`${project.title} - ${currentImageIndex + 1}`} 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800';
+                  }}
+                />
+              </AnimatePresence>
+
+              {images.length > 1 && (
+                <>
+                  <button 
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-900 opacity-0 group-hover/carousel:opacity-100 transition-opacity hover:bg-white"
+                  >
+                    <Icon name="ChevronLeft" className="w-6 h-6" />
+                  </button>
+                  <button 
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-900 opacity-0 group-hover/carousel:opacity-100 transition-opacity hover:bg-white"
+                  >
+                    <Icon name="ChevronRight" className="w-6 h-6" />
+                  </button>
+
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    {images.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentImageIndex(idx)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          idx === currentImageIndex ? 'bg-teal-500 w-6' : 'bg-white/50'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
+
+            {/* Thumbnails */}
+            {images.length > 1 && (
+              <div className="mt-6 flex space-x-4 overflow-x-auto pb-2 scrollbar-hide">
+                {images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentImageIndex(idx)}
+                    className={`relative flex-shrink-0 w-24 aspect-video rounded-lg overflow-hidden border-2 transition-all ${
+                      idx === currentImageIndex ? 'border-teal-500' : 'border-transparent opacity-60 hover:opacity-100'
+                    }`}
+                  >
+                    <img src={img} alt="" className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </motion.div>
 
           {/* Right: Project Info */}

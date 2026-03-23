@@ -15,10 +15,10 @@ export const SERVICES: Service[] = [
       { title: 'CARTELERÍA Y SEÑALÉTICA', description: 'Cartelería, banners, roll-up, directorios y señalética de empresa, …', icon: 'UserSquare' },
     ],
     collaborators: [
-      { name: 'tomplalprint', logo: 'https://unavatar.io/tompla.com' },
-      { name: 'ovelar etiquetas', logo: 'https://unavatar.io/ovelar.com' },
-      { name: 'tomplapac', logo: 'https://unavatar.io/tompla.com' },
-      { name: 'tomplaplrint regalos', logo: 'https://unavatar.io/tompla.com' },
+      { name: 'Tomplalprint', logo: '/images/collab-tomplalprint.png' },
+      { name: 'Ovelar', logo: '/images/collab-ovelar.png' },
+      { name: 'Tomplapac', logo: '/images/collab-tomplapac.png' },
+      { name: 'Tomplaprint Regalos', logo: '/images/collab-tomplaprint-regalos.png' },
     ]
   },
   {
@@ -35,8 +35,8 @@ export const SERVICES: Service[] = [
       { title: 'MAQUINARIA DE OFICINA', description: 'Destructoras, ensobradoras, plegadoras, …', icon: 'Cpu' },
     ],
     collaborators: [
-      { name: 'DELL', logo: 'https://unavatar.io/dell.com' },
-      { name: 'EPSON', logo: 'https://unavatar.io/epson.com' },
+      { name: 'Dell', logo: '/images/collab-dell.png' },
+      { name: 'Epson', logo: '/images/collab-epson.png' },
     ]
   },
   {
@@ -53,7 +53,7 @@ export const SERVICES: Service[] = [
       { title: 'SOPORTES TABLET', description: 'Soportes y carcasas para tablet.', icon: 'Smartphone' },
     ],
     collaborators: [
-      { name: 'BRAVOUR Standout & Impress', logo: 'https://unavatar.io/bravour.com' },
+      { name: 'Bravour', logo: '/images/collab-bravour.png' },
     ]
   },
   {
@@ -69,9 +69,7 @@ export const SERVICES: Service[] = [
       { title: 'TARJETAS DE IDENTIFICACIÓN Y ACCESO', description: 'Tarjetas de PVC blancas o personalizadas, con banda magnética, chip de contacto o proximidad, RFID NFC.  Tarjetas SAFEKEEPERCARD para almacenaje de claves y contraseñas', icon: 'Smartphone' },
     ],
     collaborators: [
-      { name: 'HP', logo: 'https://unavatar.io/hp.com' },
-      { name: 'Brother', logo: 'https://unavatar.io/brother.com' },
-      { name: 'Epson', logo: 'https://unavatar.io/epson.com' },
+      { name: 'Epson', logo: '/images/collab-epson.png' },
     ]
   },
   {
@@ -86,11 +84,11 @@ export const SERVICES: Service[] = [
       { title: 'MOBILIARIO AUXILIAR Y COMPLEMENTOS', description: 'Percheros, papeleras, biombos y accesorios que completan su entorno de trabajo.', icon: 'FileText' },
     ],
     collaborators: [
-      { name: 'Planning Sisplamo', logo: 'https://unavatar.io/planningsisplamo.com' },
-      { name: 'Made Desing', logo: 'https://unavatar.io/madedesign.es' },
-      { name: 'Actiu', logo: 'https://unavatar.io/actiu.com' },
-      { name: 'DILE the art of seating', logo: 'https://unavatar.io/dileoffice.com' },
-      { name: 'Nautilus Intelligent Furniture', logo: 'https://unavatar.io/nautilus.pt' },
+      { name: 'Planning Sisplamo', logo: '/images/collab-planning-sisplamo.png' },
+      { name: 'Made Design', logo: '/images/collab-made-design.png' },
+      { name: 'Actiu', logo: '/images/collab-actiu.png' },
+      { name: 'Dile', logo: '/images/collab-dile.png' },
+      { name: 'Nautilus', logo: '/images/collab-nautilus.png' },
     ]
   },
   {
@@ -107,28 +105,84 @@ export const SERVICES: Service[] = [
       { title: 'BPM', description: 'Portal corporativo, del proveedor y del cliente.', icon: 'Maximize' },
     ],
     collaborators: [
-      { name: 'Freeware', logo: 'https://unavatar.io/freeware.es' },
-      { name: 'Palmart', logo: 'https://unavatar.io/palmart.es' },
+      { name: 'Freeware', logo: '/images/collab-freeware.png' },
+      { name: 'Palmart', logo: '/images/collab-palmart.png' },
     ]
   },
 ];
 
 export const PROJECTS: Project[] = [
-  { id: 1, title: 'UNIVERSIDAD POPULAR - ARUCAS', category: 'Espacios de trabajo', image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800', date: 'Enero 2024' },
-  { id: 2, title: 'INVENTIA PLUS', category: 'Imagen corporativa', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800', date: 'Diciembre 2023' },
-  { id: 3, title: 'GRAN CANARIA ESPACIO DIGITAL', category: 'Audiovisuales', image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800', date: 'Noviembre 2023' },
-  { id: 4, title: 'CENTRO DE REPROGRAFÍA E INFORMÁTICA DE LAS PALMAS', category: 'Espacios de trabajo', image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800', date: 'Octubre 2023' },
-  { id: 5, title: 'OFICINAS MODERNAS', category: 'Espacios de trabajo', image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800', date: 'Septiembre 2023' },
-  { id: 6, title: 'SALA DE REUNIONES', category: 'Audiovisuales', image: 'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&q=80&w=800', date: 'Agosto 2023' },
+  { 
+    id: 1, 
+    title: 'UNIVERSIDAD POPULAR - ARUCAS', 
+    category: 'Espacios de trabajo', 
+    image: '/images/Universidad Popular – Arucas.jpg', 
+    gallery: ['/images/Universidad Popular – Arucas 2.jpg', '/images/Universidad Popular – Arucas 3.jpg', '/images/Universidad Popular – Arucas 4.jpg'],
+    date: 'Enero 2024' 
+  },
+  { 
+    id: 2, 
+    title: 'INVENTIA PLUS', 
+    category: 'Imagen corporativa', 
+    image: '/images/Inventia Plus.jpg', 
+    gallery: ['/images/Inventia Plus 2.jpg', '/images/Inventia Plus 3.jpg', '/images/Inventia Plus 4.jpg'],
+    date: 'Diciembre 2023' 
+  },
+  { 
+    id: 3, 
+    title: 'GRAN CANARIA ESPACIO DIGITAL', 
+    category: 'Audiovisuales', 
+    image: '/images/Gran Canaria Espacio Digital.jpg', 
+    gallery: ['/images/Gran Canaria Espacio Digital.jpg'],
+    date: 'Noviembre 2023' 
+  },
+  { 
+    id: 4, 
+    title: 'CENTRO DE REPROGRAFÍA E INFORMÁTICA DE LAS PALMAS', 
+    category: 'Espacios de trabajo', 
+    image: '/images/Centro de Reprografía e Informática de Las Palmas.jpg', 
+    gallery: ['/images/Centro de Reprografía e Informática de Las Palmas 2.jpg', '/images/Centro de Reprografía e Informática de Las Palmas 3.jpg', '/images/Centro de Reprografía e Informática de Las Palmas 4.jpg'],
+    date: 'Octubre 2023' 
+  },
+  { 
+    id: 5, 
+    title: 'AYUNTAMIENTO DE SANTA BRÍGIDA', 
+    category: 'Espacios de trabajo', 
+    image: '/images/ayuntamiento de santa brigida.jpg', 
+    gallery: ['/images/ayuntamiento de santa brigida 2.jpg', '/images/ayuntamiento de santa brigida 3.jpg', '/images/ayuntamiento de santa brigida 4.jpg', '/images/ayuntamiento de santa brigida 5.jpg'],
+    date: 'Septiembre 2023' 
+  },
+  { 
+    id: 6, 
+    title: 'VALLESECO', 
+    category: 'Espacios de trabajo', 
+    image: '/images/valleseco.jpg', 
+    gallery: ['/images/valleseco.jpg'],
+    date: 'Agosto 2023' 
+  },
+  { 
+    id: 7, 
+    title: 'VALSEQUILLO', 
+    category: 'Espacios de trabajo', 
+    image: '/images/valsequillo.jpg', 
+    gallery: ['/images/valsequillo.jpg'],
+    date: 'Julio 2023' 
+  },
 ];
 
 export const COLLABORATORS: Collaborator[] = [
-  { name: 'DELL', logo: 'https://unavatar.io/dell.com' },
-  { name: 'EPSON', logo: 'https://unavatar.io/epson.com' },
-  { name: 'ACTIU', logo: 'https://unavatar.io/actiu.com' },
-  { name: 'TOMPLA', logo: 'https://unavatar.io/tompla.com' },
-  { name: 'OVELAR', logo: 'https://unavatar.io/ovelar.com' },
-  { name: 'HP', logo: 'https://unavatar.io/hp.com' },
-  { name: 'Brother', logo: 'https://unavatar.io/brother.com' },
-  { name: 'Palmart', logo: 'https://unavatar.io/palmart.es' },
+  { name: 'Palmart', logo: '/images/collab-palmart.png' },
+  { name: 'Freeware', logo: '/images/collab-freeware.png' },
+  { name: 'Nautilus', logo: '/images/collab-nautilus.png' },
+  { name: 'Dile', logo: '/images/collab-dile.png' },
+  { name: 'Actiu', logo: '/images/collab-actiu.png' },
+  { name: 'Made Design', logo: '/images/collab-made-design.png' },
+  { name: 'Planning Sisplamo', logo: '/images/collab-planning-sisplamo.png' },
+  { name: 'Bravour', logo: '/images/collab-bravour.png' },
+  { name: 'Epson', logo: '/images/collab-epson.png' },
+  { name: 'Dell', logo: '/images/collab-dell.png' },
+  { name: 'Tomplaprint Regalos', logo: '/images/collab-tomplaprint-regalos.png' },
+  { name: 'Tomplapac', logo: '/images/collab-tomplapac.png' },
+  { name: 'Ovelar', logo: '/images/collab-ovelar.png' },
+  { name: 'Tomplalprint', logo: '/images/collab-tomplalprint.png' },
 ];

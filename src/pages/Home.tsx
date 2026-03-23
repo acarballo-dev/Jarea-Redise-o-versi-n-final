@@ -76,7 +76,7 @@ export const Home = ({ onPageChange }: HomeProps) => {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" 
+                src="/images/Inventia Plus.jpg" 
                 alt="Office" 
                 className="rounded-2xl shadow-2xl"
                 referrerPolicy="no-referrer"
@@ -106,13 +106,22 @@ export const Home = ({ onPageChange }: HomeProps) => {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-slate-900 mb-16 tracking-widest uppercase">TRABAJOS RECIENTES</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PROJECTS.map((project) => (
+            {PROJECTS.slice(0, 3).map((project) => (
               <ProjectCard 
                 key={project.id} 
                 project={project} 
                 onClick={() => onPageChange('project-detail', project)}
               />
             ))}
+          </div>
+          <div className="mt-16 text-center">
+            <button 
+              onClick={() => onPageChange('proyectos')}
+              className="inline-flex items-center gap-2 text-teal-500 font-bold hover:text-teal-400 transition-colors group"
+            >
+              VER TODOS LOS PROYECTOS
+              <Icon name="ChevronRight" className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </button>
           </div>
         </div>
       </section>

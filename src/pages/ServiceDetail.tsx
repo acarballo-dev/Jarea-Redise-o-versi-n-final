@@ -22,15 +22,15 @@ export const ServiceDetail = ({ service, onPageChange }: ServiceDetailProps) => 
   }, [service.id, service.subServices]);
   // Map service IDs to specific background images to match the provided screenshots
   const bgImages: Record<string, string> = {
-    'imagen-corporativa': 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1920',
-    'equipamiento-informatico': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1920',
-    'audiovisuales': 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1920',
-    'software-de-gestion': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1920',
-    'espacios-de-trabajo': 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1920',
-    'consumibles': 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1920',
+    'imagen-corporativa': '/images/service-imagen-corporativa.jpg',
+    'equipamiento-informatico': '/images/service-equipamiento-informatico.jpg',
+    'audiovisuales': '/images/service-audiovisuales.jpg',
+    'software-de-gestion': '/images/service-software-de-gestion.jpg',
+    'espacios-de-trabajo': '/images/service-espacios-de-trabajo.jpg',
+    'consumibles': '/images/service-consumibles.jpg',
   };
 
-  const heroBg = bgImages[service.id] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1920';
+  const heroBg = bgImages[service.id] || '/images/service-default.jpg';
 
   return (
     <div className="pt-20">
