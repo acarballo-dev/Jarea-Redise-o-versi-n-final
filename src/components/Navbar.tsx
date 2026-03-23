@@ -25,15 +25,27 @@ export const Navbar = ({ currentPage, onPageChange }: NavbarProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center cursor-pointer" onClick={() => onPageChange('home')}>
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-2xl">J</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-xl leading-none">Jarea</span>
-                <span className="text-teal-400 text-xs tracking-widest uppercase">Soluciones</span>
-              </div>
-            </div>
+            <img 
+              src="/images/jarea-logo.png" 
+              alt="Jarea Soluciones" 
+              className="h-12 w-auto object-contain"
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                target.parentElement!.innerHTML = `
+                  <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center">
+                      <span class="text-white font-bold text-2xl">J</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="text-white font-bold text-xl leading-none">Jarea</span>
+                      <span class="text-teal-400 text-xs tracking-widest uppercase">Soluciones</span>
+                    </div>
+                  </div>
+                `;
+              }}
+            />
           </div>
 
           {/* Desktop Menu */}

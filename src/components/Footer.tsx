@@ -12,14 +12,28 @@ export const Footer = ({ onPageChange }: FooterProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand & Social */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-teal-500 rounded-md flex items-center justify-center">
-                <span className="text-white font-bold text-lg">J</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-lg leading-none">Jarea</span>
-                <span className="text-teal-400 text-[10px] tracking-widest uppercase">Soluciones</span>
-              </div>
+            <div className="flex items-center cursor-pointer" onClick={() => onPageChange('home')}>
+              <img 
+                src="/images/jarea-logo.png" 
+                alt="Jarea Soluciones" 
+                className="h-10 w-auto object-contain"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.parentElement!.innerHTML = `
+                    <div class="flex items-center space-x-2">
+                      <div class="w-8 h-8 bg-teal-500 rounded-md flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">J</span>
+                      </div>
+                      <div class="flex flex-col">
+                        <span class="text-white font-bold text-lg leading-none">Jarea</span>
+                        <span class="text-teal-400 text-[10px] tracking-widest uppercase">Soluciones</span>
+                      </div>
+                    </div>
+                  `;
+                }}
+              />
             </div>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-teal-400 transition-colors"><Icon name="Facebook" className="w-5 h-5" /></a>
