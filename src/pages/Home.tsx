@@ -76,7 +76,7 @@ export const Home = ({ onPageChange }: HomeProps) => {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
               <img 
-                src="./images/Inventia Plus.jpg" 
+                src="/images/InventiaPlus.jpg" 
                 alt="Office" 
                 className="rounded-2xl shadow-2xl"
                 referrerPolicy="no-referrer"
