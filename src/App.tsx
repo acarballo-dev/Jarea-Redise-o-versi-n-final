@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { Page, Service, Project } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { CookieBanner } from './components/CookieBanner';
 import { Home } from './pages/Home';
 import { ServiceDetail } from './pages/ServiceDetail';
 import { ProjectDetail } from './pages/ProjectDetail';
@@ -79,6 +80,7 @@ export default function App() {
       </main>
 
       <Footer onPageChange={handlePageChange} />
+      <CookieBanner />
     </div>
   );
 }

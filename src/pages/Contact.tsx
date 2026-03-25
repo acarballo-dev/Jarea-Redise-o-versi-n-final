@@ -1,6 +1,18 @@
+import React, { useState, FormEvent } from 'react';
 import { Icon } from '../components/Icon';
 
 export const Contact = () => {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    empresa: '',
+    telefono: '',
+    asunto: '',
+    area: 'Imagen Corporativa',
+    mensaje: ''
+  });
+
   const contactInfo = [
     {
       title: 'DIRECCIÓN:',
@@ -24,6 +36,45 @@ export const Contact = () => {
     }
   ];
 
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setStatus('submitting');
+
+    try {
+      // Reemplaza 'info@jareas.es' con tu ID de Formspree si prefieres usar uno específico
+      const response = await fetch('https://formspree.io/f/info@jareas.es', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({
+          nombre: '',
+          email: '',
+          empresa: '',
+          telefono: '',
+          asunto: '',
+          area: 'Imagen Corporativa',
+          mensaje: ''
+        });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error enviando el formulario:', error);
+      setStatus('error');
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
     <div className="pt-20">
       <section className="py-24 bg-white">
@@ -46,48 +97,125 @@ export const Contact = () => {
 
             {/* Right Column: Form */}
             <div className="lg:w-2/3 bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100">
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Nombre*</label>
-                  <input type="text" className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" required />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Email*</label>
-                  <input type="email" className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" required />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Empresa</label>
-                  <input type="text" className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Teléfono</label>
-                  <input type="tel" className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" />
-                </div>
-                <div className="md:col-span-2 space-y-2">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Asunto</label>
-                  <input type="text" className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" />
-                </div>
-                <div className="md:col-span-2 space-y-2">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Área de Interés</label>
-                  <select className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500 bg-white">
-                    <option>Imagen Corporativa</option>
-                    <option>Equipamiento Informático</option>
-                    <option>Audiovisuales</option>
-                    <option>Consumibles</option>
-                    <option>Espacios de Trabajo</option>
-                    <option>Software de Gestión</option>
-                  </select>
-                </div>
-                <div className="md:col-span-2 space-y-2">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Mensaje</label>
-                  <textarea rows={6} className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500"></textarea>
-                </div>
-                <div className="md:col-span-2">
-                  <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-4 rounded-md transition-all tracking-widest uppercase">
-                    ENVIAR MENSAJE
+              {status === 'success' ? (
+                <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12">
+                  <div className="w-20 h-20 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center">
+                    <Icon name="Check" className="w-10 h-10" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-slate-900">¡Mensaje Enviado!</h2>
+                  <p className="text-slate-600 max-w-md">
+                    Gracias por contactar con Jarea Soluciones. Hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible.
+                  </p>
+                  <button 
+                    onClick={() => setStatus('idle')}
+                    className="text-teal-600 font-bold hover:underline pt-4"
+                  >
+                    Enviar otro mensaje
                   </button>
                 </div>
-              </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Nombre*</label>
+                    <input 
+                      type="text" 
+                      name="nombre"
+                      value={formData.nombre}
+                      onChange={handleChange}
+                      className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" 
+                      required 
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Email*</label>
+                    <input 
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" 
+                      required 
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Empresa</label>
+                    <input 
+                      type="text" 
+                      name="empresa"
+                      value={formData.empresa}
+                      onChange={handleChange}
+                      className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" 
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Teléfono</label>
+                    <input 
+                      type="tel" 
+                      name="telefono"
+                      value={formData.telefono}
+                      onChange={handleChange}
+                      className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" 
+                    />
+                  </div>
+                  <div className="md:col-span-2 space-y-2">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Asunto</label>
+                    <input 
+                      type="text" 
+                      name="asunto"
+                      value={formData.asunto}
+                      onChange={handleChange}
+                      className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" 
+                    />
+                  </div>
+                  <div className="md:col-span-2 space-y-2">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Área de Interés</label>
+                    <select 
+                      name="area"
+                      value={formData.area}
+                      onChange={handleChange}
+                      className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500 bg-white"
+                    >
+                      <option>Imagen Corporativa</option>
+                      <option>Equipamiento Informático</option>
+                      <option>Audiovisuales</option>
+                      <option>Consumibles</option>
+                      <option>Espacios de Trabajo</option>
+                      <option>Software de Gestión</option>
+                    </select>
+                  </div>
+                  <div className="md:col-span-2 space-y-2">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Mensaje</label>
+                    <textarea 
+                      name="mensaje"
+                      value={formData.mensaje}
+                      onChange={handleChange}
+                      rows={6} 
+                      className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500"
+                    ></textarea>
+                  </div>
+                  
+                  {status === 'error' && (
+                    <div className="md:col-span-2 text-red-500 text-sm font-medium">
+                      Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o contáctanos directamente por email.
+                    </div>
+                  )}
+
+                  <div className="md:col-span-2">
+                    <button 
+                      type="submit"
+                      disabled={status === 'submitting'}
+                      className={`w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-4 rounded-md transition-all tracking-widest uppercase flex items-center justify-center ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                    >
+                      {status === 'submitting' ? (
+                        <>
+                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+                          ENVIANDO...
+                        </>
+                      ) : 'ENVIAR MENSAJE'}
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
           </div>
         </div>

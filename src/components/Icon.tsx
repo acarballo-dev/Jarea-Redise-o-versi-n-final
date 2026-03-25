@@ -39,7 +39,9 @@ import {
   Youtube,
   ChevronRight,
   Menu,
-  X
+  X,
+  Info,
+  Check
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -47,7 +49,7 @@ const iconMap: Record<string, React.ElementType> = {
   Laptop, MousePointer2, Wifi, Cpu, Projector, Tablet, Hand, Speaker, Smartphone,
   Lightbulb, Presentation, ExternalLink, Users, Layers, Folder, Maximize,
   MapPin, Phone, Mail, Clock, Search, Facebook, Twitter, Linkedin, Instagram, Youtube,
-  ChevronRight, Menu, X
+  ChevronRight, Menu, X, Info, Check
 };
 
 export const Icon = ({ name, className }: { name: string, className?: string }) => {
