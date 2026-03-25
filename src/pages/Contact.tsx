@@ -42,7 +42,7 @@ export const Contact = () => {
 
     try {
       // Reemplaza 'info@jareas.es' con tu ID de Formspree si prefieres usar uno específico
-      const response = await fetch('https://formspree.io/f/info@jareas.es', {
+      const response = await fetch('https://formspree.io/f/info@jarea.es', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
