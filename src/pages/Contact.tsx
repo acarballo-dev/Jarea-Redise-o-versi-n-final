@@ -1,7 +1,9 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { Icon } from '../components/Icon';
 
 export const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({
     nombre: '',
@@ -40,17 +42,27 @@ export const Contact = () => {
     e.preventDefault();
     setStatus('submitting');
 
-    try {
-      // Reemplaza 'info@jareas.es' con tu ID de Formspree si prefieres usar uno específico
-      const response = await fetch('https://formspree.io/f/info@jarea.es', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
+    // CONFIGURACIÓN DE EMAILJS:
+    // 1. Crea una cuenta en emailjs.com
+    // 2. Añade un "Email Service" (ej: Gmail o tu propio SMTP)
+    // 3. Crea un "Email Template" con variables como {{nombre}}, {{email}}, {{mensaje}}, etc.
+    // 4. Copia tus IDs aquí abajo:
+    
+    const SERVICE_ID = 'service_9c3yds6'; // Reemplaza con tu Service ID
+    const TEMPLATE_ID = 'template_7n1k7sp'; // Reemplaza con tu Template ID
+    const PUBLIC_KEY = '5aec9fkyNrn4-Q2-N'; // Reemplaza con tu Public Key (Account > API Keys)
 
-      if (response.ok) {
+    if (!form.current) return;
+
+    try {
+      const result = await emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        form.current,
+        PUBLIC_KEY
+      );
+
+      if (result.text === 'OK') {
         setStatus('success');
         setFormData({
           nombre: '',
@@ -65,7 +77,7 @@ export const Contact = () => {
         setStatus('error');
       }
     } catch (error) {
-      console.error('Error enviando el formulario:', error);
+      console.error('Error con EmailJS:', error);
       setStatus('error');
     }
   };
@@ -114,7 +126,7 @@ export const Contact = () => {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form ref={form} onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Nombre*</label>
                     <input 
