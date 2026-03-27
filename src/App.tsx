@@ -13,6 +13,10 @@ import { ServiceDetail } from './pages/ServiceDetail';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { Projects } from './pages/Projects';
 import { Contact } from './pages/Contact';
+import { InfoGeneral } from './pages/InfoGeneral';
+import { AvisoLegal } from './pages/AvisoLegal';
+import { Privacidad } from './pages/Privacidad';
+import { Cookies } from './pages/Cookies';
 import { SERVICES } from './constants';
 
 export default function App() {
@@ -61,6 +65,14 @@ export default function App() {
         );
       case 'contacto':
         return <Contact />;
+      case 'info-general':
+        return <InfoGeneral />;
+      case 'aviso-legal':
+        return <AvisoLegal />;
+      case 'privacidad':
+        return <Privacidad />;
+      case 'cookies':
+        return <Cookies />;
       case 'productos':
       case 'servicios':
       case 'nosotros':

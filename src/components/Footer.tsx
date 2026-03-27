@@ -9,7 +9,7 @@ export const Footer = ({ onPageChange }: FooterProps) => {
   return (
     <footer className="bg-slate-900 text-gray-400 pt-16 pb-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Brand & Social */}
           <div className="space-y-6">
             <div className="flex items-center cursor-pointer" onClick={() => onPageChange('home')}>
@@ -74,29 +74,15 @@ export const Footer = ({ onPageChange }: FooterProps) => {
               </li>
             </ul>
           </div>
-
-          {/* Newsletter */}
-          <div>
-            <h4 className="text-white font-bold mb-6 text-sm tracking-widest uppercase">SUSCRÍBETE A NUESTRO BOLETÍN</h4>
-            <div className="space-y-4">
-              <input 
-                type="email" 
-                placeholder="Email" 
-                className="w-full bg-slate-800 border border-white/10 rounded-md px-4 py-2 text-sm focus:outline-none focus:border-teal-500"
-              />
-              <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 rounded-md transition-colors text-sm">
-                ENVIAR
-              </button>
-            </div>
-          </div>
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
           <p>© Copyright Jarea Soluciones - Mídite.</p>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-teal-400">Legal</a>
-            <a href="#" className="hover:text-teal-400">Fenalov Coplentos</a>
-            <a href="#" className="hover:text-teal-400">Cookies policy</a>
+            <button onClick={() => onPageChange('info-general')} className="hover:text-teal-400">Información General</button>
+            <button onClick={() => onPageChange('aviso-legal')} className="hover:text-teal-400">Aviso Legal</button>
+            <button onClick={() => onPageChange('privacidad')} className="hover:text-teal-400">Privacidad</button>
+            <button onClick={() => onPageChange('cookies')} className="hover:text-teal-400">Política de Cookies</button>
           </div>
         </div>
       </div>

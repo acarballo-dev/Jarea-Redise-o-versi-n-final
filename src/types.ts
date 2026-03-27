@@ -28,4 +28,4 @@ export interface Collaborator {
   logo: string;
 }
 
-export type Page = 'home' | 'productos' | 'servicios' | 'proyectos' | 'nosotros' | 'contacto' | 'service-detail' | 'project-detail';
+export type Page = 'home' | 'productos' | 'servicios' | 'proyectos' | 'nosotros' | 'contacto' | 'service-detail' | 'project-detail' | 'info-general' | 'aviso-legal' | 'privacidad' | 'cookies';
