@@ -9,6 +9,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
 import { Home } from './pages/Home';
+import { About } from './pages/About';
 import { ServiceDetail } from './pages/ServiceDetail';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { Projects } from './pages/Projects';
@@ -65,6 +66,8 @@ export default function App() {
         );
       case 'contacto':
         return <Contact />;
+      case 'nosotros':
+        return <About onPageChange={handlePageChange} />;
       case 'info-general':
         return <InfoGeneral />;
       case 'aviso-legal':

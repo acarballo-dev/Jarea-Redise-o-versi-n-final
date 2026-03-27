@@ -13,21 +13,21 @@ export const Home = ({ onPageChange }: HomeProps) => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center bg-slate-950 overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center justify-center bg-slate-950 overflow-hidden py-20">
         {/* Grid Background */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 via-transparent to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center pb-32 md:pb-48">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
           >
-            Equipamos tu empresa <br />
-            <span className="text-teal-400">con lo mejor del mercado</span>
+            Tu empresa merece <br />
+            <span className="text-teal-400">un socio, no un proveedor.</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -35,30 +35,45 @@ export const Home = ({ onPageChange }: HomeProps) => {
             transition={{ delay: 0.1 }}
             className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto"
           >
-            Soluciones integrales para tu negocio en Gran Canaria.
+            Gestionamos proyectos, equipamiento e instalaciones para que tú solo tengas que preocuparte de lo que realmente importa: hacer crecer tu negocio.
           </motion.p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mb-16"
+          >
+            <button 
+              onClick={() => onPageChange('contacto')}
+              className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-md font-bold text-lg transition-all flex items-center justify-center mx-auto group"
+            >
+              Cuéntanos tu proyecto
+              <Icon name="ArrowRight" className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </button>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 max-w-4xl mx-auto">
             <div className="text-center">
               <span className="block text-4xl md:text-5xl font-bold text-teal-400 mb-2">200+</span>
-              <span className="text-gray-500 text-sm uppercase tracking-widest">proyectos entregados</span>
+              <span className="text-gray-500 text-sm uppercase tracking-widest font-medium">proyectos entregados</span>
             </div>
             <div className="text-center">
               <span className="block text-4xl md:text-5xl font-bold text-teal-400 mb-2">15+</span>
-              <span className="text-gray-500 text-sm uppercase tracking-widest">años de experiencia</span>
+              <span className="text-gray-500 text-sm uppercase tracking-widest font-medium">años de experiencia</span>
             </div>
             <div className="text-center">
               <span className="block text-4xl md:text-5xl font-bold text-teal-400 mb-2">6</span>
-              <span className="text-gray-500 text-sm uppercase tracking-widest">áreas de especialización</span>
+              <span className="text-gray-500 text-sm uppercase tracking-widest font-medium">áreas de especialización</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 -mt-32 relative z-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:-mt-32 relative z-20">
             {SERVICES.map((service) => (
               <ServiceCard 
                 key={service.id} 
@@ -83,17 +98,18 @@ export const Home = ({ onPageChange }: HomeProps) => {
               />
             </div>
             <div className="lg:w-1/2 space-y-6">
-              <span className="text-teal-500 font-bold text-sm tracking-widest uppercase">Nosotros</span>
-              <h2 className="text-4xl font-bold text-slate-900 tracking-tight">SOBRE JAREA SOLUCIONES</h2>
+              <span className="text-teal-500 font-bold text-sm tracking-widest uppercase">QUIÉNES SOMOS</span>
+              <h2 className="text-4xl font-bold text-slate-900 tracking-tight">No vendemos productos. Resolvemos problemas.</h2>
               <p className="text-gray-600 leading-relaxed">
-                 Jarea Soluciones es una empresa joven, pero con una dilatada experiencia en gestión de proyectos, instalaciones, equipamiento y suministro para empresas. Nuestro objetivo es convertirnos en su colaborador de confianza y juntos aportar a su compañía las mejores soluciones y productos. Nuestro trabajo no es vender productos o servicios. Cuando trabajas con nosotros, nos convertimos en parte de tu equipo. 
+                En Jarea Soluciones sabemos que cada empresa es diferente, y que un proveedor que simplemente sirve pedidos no es suficiente. Por eso trabajamos de otra manera: cuando nos contratas, pasamos a formar parte de tu equipo.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Para nosotros, cada pedido es un proceso en marcha para ayudar a hacer crecer su negocio. Somos una empresa pequeña pero ágil, orgullosos de cada trabajo y capaces de abordar proyectos de cualquier volumen con una máxima clara que no es otra que generar las mejores soluciones.
-
-
+                Somos ágiles, comprometidos y apasionados por cada proyecto. Da igual si se trata de equipar una oficina, renovar tu imagen corporativa o gestionar una instalación compleja: lo abordamos con la misma exigencia y cuidado.
               </p>
-              <button className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-md font-bold transition-all">
+              <button 
+                onClick={() => onPageChange('nosotros')}
+                className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-md font-bold transition-all"
+              >
                 SABER MÁS
               </button>
             </div>
@@ -122,6 +138,44 @@ export const Home = ({ onPageChange }: HomeProps) => {
               VER TODOS LOS PROYECTOS
               <Icon name="ChevronRight" className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">Lo que dicen nuestros clientes</h2>
+            <div className="w-20 h-1 bg-teal-500 mx-auto"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                text: "Jarea Soluciones se ha convertido en nuestro socio tecnológico de confianza. Su capacidad de respuesta y profesionalidad son excepcionales.",
+                author: "Director IT",
+                company: "Institución Educativa"
+              },
+              {
+                text: "Equiparon nuestra nueva oficina en tiempo récord y con un resultado impecable. Entienden perfectamente lo que necesita una empresa moderna.",
+                author: "Gerente",
+                company: "Despacho Profesional"
+              },
+              {
+                text: "La mejor decisión que tomamos fue confiarles nuestra imagen corporativa y el software de gestión. Un servicio integral de primer nivel.",
+                author: "Propietario",
+                company: "Empresa de Servicios"
+              }
+            ].map((testimonial, idx) => (
+              <div key={idx} className="bg-gray-50 p-8 rounded-2xl relative">
+                <Icon name="Quote" className="w-10 h-10 text-teal-500/20 absolute top-6 right-6" />
+                <p className="text-gray-600 italic mb-6 leading-relaxed">"{testimonial.text}"</p>
+                <div>
+                  <p className="font-bold text-slate-900">{testimonial.author}</p>
+                  <p className="text-sm text-teal-600">{testimonial.company}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

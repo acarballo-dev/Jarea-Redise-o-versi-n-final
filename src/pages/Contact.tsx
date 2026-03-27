@@ -89,6 +89,15 @@ export const Contact = () => {
 
   return (
     <div className="pt-20">
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Hablemos. Sin compromisos.</h1>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Si estás buscando un socio de confianza para equipar, mejorar o digitalizar tu empresa en Gran Canaria, nos encantaría conocer tu proyecto. Cuéntanos qué necesitas y te daremos una respuesta en menos de 24 horas. Sin letra pequeña y con soluciones reales.
+          </p>
+        </div>
+      </section>
+
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
@@ -128,7 +137,7 @@ export const Contact = () => {
               ) : (
                 <form ref={form} onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Nombre*</label>
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Nombre y apellidos*</label>
                     <input 
                       type="text" 
                       name="nombre"
@@ -160,21 +169,11 @@ export const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Teléfono</label>
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Teléfono de contacto</label>
                     <input 
                       type="tel" 
                       name="telefono"
                       value={formData.telefono}
-                      onChange={handleChange}
-                      className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" 
-                    />
-                  </div>
-                  <div className="md:col-span-2 space-y-2">
-                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Asunto</label>
-                    <input 
-                      type="text" 
-                      name="asunto"
-                      value={formData.asunto}
                       onChange={handleChange}
                       className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500" 
                     />
@@ -196,13 +195,14 @@ export const Contact = () => {
                     </select>
                   </div>
                   <div className="md:col-span-2 space-y-2">
-                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Mensaje</label>
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Cuéntanos brevemente qué necesitas</label>
                     <textarea 
                       name="mensaje"
                       value={formData.mensaje}
                       onChange={handleChange}
                       rows={6} 
                       className="w-full border border-gray-200 rounded-md px-4 py-3 focus:outline-none focus:border-teal-500"
+                      required
                     ></textarea>
                   </div>
                   

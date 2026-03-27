@@ -1,15 +1,18 @@
 import { Icon } from './Icon';
 import { Page, Service, Project } from '../types';
+import { PROJECTS, SERVICES } from '../constants';
 
 interface FooterProps {
   onPageChange: (page: Page, data?: Service | Project) => void;
 }
 
 export const Footer = ({ onPageChange }: FooterProps) => {
+  const recentProjects = PROJECTS.slice(0, 6);
+
   return (
     <footer className="bg-slate-900 text-gray-400 pt-16 pb-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand & Social */}
           <div className="space-y-6">
             <div className="flex items-center cursor-pointer" onClick={() => onPageChange('home')}>
@@ -36,10 +39,10 @@ export const Footer = ({ onPageChange }: FooterProps) => {
               />
             </div>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-teal-400 transition-colors"><Icon name="Facebook" className="w-5 h-5" /></a>
-              <a href="#" className="hover:text-teal-400 transition-colors"><Icon name="Youtube" className="w-5 h-5" /></a>
-              <a href="#" className="hover:text-teal-400 transition-colors"><Icon name="Linkedin" className="w-5 h-5" /></a>
-              <a href="#" className="hover:text-teal-400 transition-colors"><Icon name="Instagram" className="w-5 h-5" /></a>
+              <a href="https://www.facebook.com/JareaSoluciones" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors"><Icon name="Facebook" className="w-5 h-5" /></a>
+              <a href="https://youtube.com/channel/UCo998S4ju5jMYXyUpCcPRvA" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors"><Icon name="Youtube" className="w-5 h-5" /></a>
+              <a href="https://www.linkedin.com/company/jareasoluciones" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors"><Icon name="Linkedin" className="w-5 h-5" /></a>
+              <a href="https://www.instagram.com/jareasoluciones/" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors"><Icon name="Instagram" className="w-5 h-5" /></a>
             </div>
           </div>
 
@@ -47,12 +50,16 @@ export const Footer = ({ onPageChange }: FooterProps) => {
           <div>
             <h4 className="text-white font-bold mb-6 text-sm tracking-widest uppercase">PRODUCTOS</h4>
             <ul className="space-y-3 text-sm">
-              <li><button onClick={() => onPageChange('service-detail')} className="hover:text-teal-400 transition-colors">Imagen corporativa</button></li>
-              <li><button onClick={() => onPageChange('service-detail')} className="hover:text-teal-400 transition-colors">Equipamiento informático</button></li>
-              <li><button onClick={() => onPageChange('service-detail')} className="hover:text-teal-400 transition-colors">Audiovisuales</button></li>
-              <li><button onClick={() => onPageChange('service-detail')} className="hover:text-teal-400 transition-colors">Consumibles</button></li>
-              <li><button onClick={() => onPageChange('service-detail')} className="hover:text-teal-400 transition-colors">Espacios de trabajo</button></li>
-              <li><button onClick={() => onPageChange('service-detail')} className="hover:text-teal-400 transition-colors">Software de gestión</button></li>
+              {SERVICES.map((service) => (
+                <li key={service.id}>
+                  <button 
+                    onClick={() => onPageChange('service-detail', service)} 
+                    className="hover:text-teal-400 transition-colors text-left"
+                  >
+                    {service.title}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -74,11 +81,34 @@ export const Footer = ({ onPageChange }: FooterProps) => {
               </li>
             </ul>
           </div>
+
+          {/* Projects Grid */}
+          <div>
+            <h4 className="text-white font-bold mb-6 text-sm tracking-widest uppercase">PROYECTOS RECIENTES</h4>
+            <div className="grid grid-cols-3 gap-2">
+              {recentProjects.map((project) => (
+                <div 
+                  key={project.id} 
+                  className="aspect-square rounded overflow-hidden cursor-pointer group relative"
+                  onClick={() => onPageChange('project-detail', project)}
+                >
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
-          <p>© Copyright Jarea Soluciones - Mídite.</p>
+          <p>© Copyright Jarea Soluciones - 2026</p>
           <div className="flex space-x-6">
+            <button onClick={() => onPageChange('nosotros')} className="hover:text-teal-400">Quiénes Somos</button>
             <button onClick={() => onPageChange('info-general')} className="hover:text-teal-400">Información General</button>
             <button onClick={() => onPageChange('aviso-legal')} className="hover:text-teal-400">Aviso Legal</button>
             <button onClick={() => onPageChange('privacidad')} className="hover:text-teal-400">Privacidad</button>

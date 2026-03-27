@@ -45,7 +45,7 @@ export const ServiceDetail = ({ service, onPageChange }: ServiceDetailProps) => 
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950/80"></div>
         </div>
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="flex items-center justify-center space-x-2 text-teal-400 text-sm font-medium mb-6">
             <button onClick={() => onPageChange('home')} className="hover:underline">Home</button>
             <span>/</span>
@@ -54,10 +54,18 @@ export const ServiceDetail = ({ service, onPageChange }: ServiceDetailProps) => 
           <motion.h1 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-4xl md:text-6xl font-bold text-white tracking-tight uppercase"
+            className="text-4xl md:text-6xl font-bold text-white tracking-tight uppercase mb-8"
           >
             {service.title}
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg md:text-xl text-gray-200 leading-relaxed font-light italic"
+          >
+            "{service.fullDescription}"
+          </motion.p>
         </div>
       </section>
 

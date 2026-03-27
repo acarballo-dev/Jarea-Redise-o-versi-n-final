@@ -21,6 +21,8 @@ export interface Project {
   image: string;
   gallery?: string[];
   date?: string;
+  description?: string;
+  challenge?: string;
 }
 
 export interface Collaborator {

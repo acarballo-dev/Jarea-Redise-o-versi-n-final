@@ -1,18 +1,25 @@
 import { Service, Project, Collaborator } from './types';
+import { project1 } from './data/projects/project-1';
+import { project2 } from './data/projects/project-2';
+import { project3 } from './data/projects/project-3';
+import { project4 } from './data/projects/project-4';
+import { project5 } from './data/projects/project-5';
+import { project6 } from './data/projects/project-6';
+import { project7 } from './data/projects/project-7';
 
 export const SERVICES: Service[] = [
   {
     id: 'imagen-corporativa',
     title: 'IMAGEN CORPORATIVA',
-    description: 'Papelería corporativa, etiquetas, regalo de empresa, cartelería y señalética, …',
-    fullDescription: 'Cartas, carpetas, tarjetas de visita, sobres y bolsas, formularios, folletos y publicaciones, …',
+    description: 'Tu marca es lo primero que ven tus clientes. Nos encargamos de que sea inolvidable.',
+    fullDescription: 'Tu marca es lo primero que ven tus clientes. Nos encargamos de que sea inolvidable. Desde el diseño del logotipo hasta la rotulación de tus vehículos, fachadas o uniformes. Creamos una identidad coherente que transmite profesionalidad y confianza.',
     icon: 'PenTool',
     subServices: [
-      { title: 'PAPELERÍA CORPORATIVA', description: 'Cartas, carpetas, tarjetas de visita, sobres y bolsas, formularios, folletos y publicaciones, …', icon: 'FileText' },
-      { title: 'ETIQUETAS', description: 'Etiquetas para todo tipo de productos: Industria química, alimentación, logística, cosmética, farmacéutica, …', icon: 'Tag' },
-      { title: 'PAQUETERÍA', description: 'Embalajes especiales para comercio electrónico.\nFácil montaje, alta resistencia y con sistema de cierre y apertura fácil.', icon: 'Package' },
-      { title: 'REGALO DE EMPRESA', description: 'Todo tipo de producto para proyectos promocionales, de publicidad y comunicación, con las propuestas y tendencias más novedosas, con todo tipo de marcaje, …', icon: 'Gift' },
-      { title: 'CARTELERÍA Y SEÑALÉTICA', description: 'Cartelería, banners, roll-up, directorios y señalética de empresa, …', icon: 'UserSquare' },
+      { title: 'PAPELERÍA CORPORATIVA', description: 'Diseñamos y producimos toda la papelería que tu empresa necesita: desde tarjetas de visita hasta folletos y publicaciones corporativas.', icon: 'FileText' },
+      { title: 'ETIQUETAS', description: 'Soluciones de etiquetado para todo tipo de industrias: química, alimentación, logística y más.', icon: 'Tag' },
+      { title: 'PAQUETERÍA', description: 'Embalajes especializados para e-commerce, diseñados para un montaje fácil y alta resistencia.', icon: 'Package' },
+      { title: 'REGALO DE EMPRESA', description: 'Propuestas novedosas en artículos promocionales con marcaje personalizado para tu marca.', icon: 'Gift' },
+      { title: 'CARTELERÍA Y SEÑALÉTICA', description: 'Sistemas de señalización, banners y roll-ups para una comunicación visual efectiva.', icon: 'UserSquare' },
     ],
     collaborators: [
       { name: 'Tomplalprint', logo: '/images/collab-tomplalprint.png' },
@@ -24,15 +31,15 @@ export const SERVICES: Service[] = [
   {
     id: 'equipamiento-informatico',
     title: 'EQUIPAMIENTO INFORMÁTICO',
-    description: 'Ordenadores, periféricos, impresión y escaneado, redes, maquinaria de oficina, …',
-    fullDescription: 'Equipamiento informático para tu empresa, sobremesa, portátiles, tablets, servidores, …',
+    description: 'No vendemos cajas, vendemos herramientas de trabajo.',
+    fullDescription: 'No vendemos cajas, vendemos herramientas de trabajo. Configuramos el hardware que tu empresa necesita para ser eficiente: ordenadores, servidores, redes y periféricos. Con marcas líderes y un soporte técnico que no te deja tirado.',
     icon: 'Monitor',
     subServices: [
-      { title: 'ORDENADORES', description: 'Equipamiento informático para tu empresa, sobremesa, portátiles, tablets, servidores, …', icon: 'Pc' },
-      { title: 'PERIFÉRICOS', description: 'Monitores, discos duros y servidores NAS, accesorios, …', icon: 'MousePointer2' },
-      { title: 'IMPRESIÓN Y ESCANEADO', description: 'Impresoras y equipos multifunción, escáneres, …', icon: 'Printer' },
-      { title: 'REDES', description: 'Electrónica de red y cableado.', icon: 'Wifi' },
-      { title: 'MAQUINARIA DE OFICINA', description: 'Destructoras, ensobradoras, plegadoras, …', icon: 'Cpu' },
+      { title: 'ORDENADORES', description: 'Equipamiento informático de alto rendimiento para tu empresa: sobremesa, portátiles, tablets y servidores.', icon: 'Pc' },
+      { title: 'PERIFÉRICOS', description: 'Monitores, discos duros, servidores NAS y accesorios esenciales para tu flujo de trabajo.', icon: 'MousePointer2' },
+      { title: 'IMPRESIÓN Y ESCANEADO', description: 'Impresoras, equipos multifunción y escáneres profesionales para una gestión documental eficiente.', icon: 'Printer' },
+      { title: 'REDES', description: 'Electrónica de red avanzada y cableado estructurado para una conectividad sin interrupciones.', icon: 'Wifi' },
+      { title: 'MAQUINARIA DE OFICINA', description: 'Destructoras, ensobradoras y plegadoras para automatizar tus tareas administrativas.', icon: 'Cpu' },
     ],
     collaborators: [
       { name: 'Dell', logo: '/images/collab-dell.png' },
@@ -42,15 +49,15 @@ export const SERVICES: Service[] = [
   {
     id: 'audiovisuales',
     title: 'AUDIOVISUALES',
-    description: 'Proyección, cartelería digital, interactivos, audio-video, soporportes tablet, …',
-    fullDescription: 'Transformamos sus espacios con tecnología audiovisual de vanguardia. Somos especialistas en sistemas de proyección, cartelería digital interactiva y soluciones completas de audio-video para salas de reuniones, eventos y espacios comerciales.',
+    description: 'Transformamos tus salas en espacios de comunicación avanzada.',
+    fullDescription: 'Transformamos tus salas en espacios de comunicación avanzada. Instalamos pantallas profesionales, sistemas de videoconferencia, sonido y cartelería digital. Soluciones intuitivas para que la tecnología sea una ayuda, no un obstáculo.',
     icon: 'Tv',
     subServices: [
-      { title: 'PROYECCIÓN', description: 'Proporcionamos productos que le apoyarán e inspirarán a hacer su espacio de trabajo más eficiente, más funcional y más elegante.Esencialmente, somos solucionadores de problemas, respondiendo de diferentes formas y facilitándole un poco la vida empresarial. Hacemos esto, ofreciendo diferentes soluciones de productos, dentro de los que se encuentran:\n\nProyectores, pantallas, soportes, lámparas, monitores, cartelería digital, interactivos', icon: 'Projector' },
-      { title: 'CARTELERÍA DIGITAL', description: 'Monitores, led, videowall, …', icon: 'Tablet' },
-      { title: 'INTERACTIVOS', description: 'Monitores y pizarras interactivas.', icon: 'Hand' },
-      { title: 'AUDIO - VÍDEO', description: 'Sistemas de conferencia, videoconferencia, altavoces, …', icon: 'Speaker' },
-      { title: 'SOPORTES TABLET', description: 'Soportes y carcasas para tablet.', icon: 'Smartphone' },
+      { title: 'PROYECCIÓN', description: 'Proyectores, pantallas y soportes que inspiran y hacen tu espacio de trabajo más elegante y funcional.', icon: 'Projector' },
+      { title: 'CARTELERÍA DIGITAL', description: 'Monitores, pantallas LED y videowalls para una comunicación dinámica e impactante.', icon: 'Tablet' },
+      { title: 'INTERACTIVOS', description: 'Monitores y pizarras interactivas que fomentan la colaboración y el aprendizaje dinámico.', icon: 'Hand' },
+      { title: 'AUDIO - VÍDEO', description: 'Sistemas de conferencia, videoconferencia y sonido profesional para salas de reuniones avanzadas.', icon: 'Speaker' },
+      { title: 'SOPORTES TABLET', description: 'Soportes y carcasas de diseño para la integración de tablets en espacios públicos y privados.', icon: 'Smartphone' },
     ],
     collaborators: [
       { name: 'Bravour', logo: '/images/collab-bravour.png' },
@@ -59,14 +66,14 @@ export const SERVICES: Service[] = [
   {
     id: 'consumibles',
     title: 'CONSUMIBLES',
-    description: 'Papel A4 y A3, tinta y tóner, pilas y baterías, tarjetas de identificación y acceso',
-    fullDescription: 'Garantizamos el suministro constante de los materiales esenciales para su operativa diaria. Disponemos de un amplio stock de tintas, tóneres, papel de alta calidad y accesorios para asegurar que su oficina nunca se detenga por falta de suministros.',
+    description: 'Que nada detenga tu actividad diaria.',
+    fullDescription: 'Que nada detenga tu actividad diaria. Suministramos todo lo que tu oficina necesita: desde tóner y papel hasta material de papelería técnica. Con entrega rápida en toda Gran Canaria para que nunca te falte de nada.',
     icon: 'Printer',
     subServices: [
-      { title: 'PAPEL A4 y A3', description: 'Consumibles y suministro de papel A4 y A4, especial para impresión láser y chorro de tinta, con las más exigentes certificaciones de calidad  ISO 9001 y medio ambientales ISO 14001, ISO 50001 y EMAS, certificados de cadena de custodia, según certificaciones folrestales FSC y PEFC.', icon: 'Paper' },
-      { title: 'TINTA Y TÓNER', description: 'La gama más completa de consumibles para todo tipo de equipos, láser como tinta, y de todas las marcar: HP, Brother, Epson, Canon, Oki, Ricoh…', icon: 'Smartphone' },
-      { title: 'PILAS Y BATERÍAS', description: 'Soportes y carcasas para tablet.', icon: 'Smartphone' },
-      { title: 'TARJETAS DE IDENTIFICACIÓN Y ACCESO', description: 'Tarjetas de PVC blancas o personalizadas, con banda magnética, chip de contacto o proximidad, RFID NFC.  Tarjetas SAFEKEEPERCARD para almacenaje de claves y contraseñas', icon: 'Smartphone' },
+      { title: 'PAPEL A4 y A3', description: 'Suministro de papel de alta calidad con certificaciones medioambientales exigentes para todo tipo de impresión.', icon: 'Paper' },
+      { title: 'TINTA Y TÓNER', description: 'Gama completa de consumibles originales y compatibles para todas las marcas líderes del mercado.', icon: 'Smartphone' },
+      { title: 'PILAS Y BATERÍAS', description: 'Soluciones de energía portátiles para mantener tus dispositivos siempre operativos.', icon: 'Smartphone' },
+      { title: 'TARJETAS DE IDENTIFICACIÓN Y ACCESO', description: 'Tarjetas de PVC personalizadas, con banda magnética, chip o tecnología RFID/NFC.', icon: 'Smartphone' },
     ],
     collaborators: [
       { name: 'Epson', logo: '/images/collab-epson.png' },
@@ -75,13 +82,13 @@ export const SERVICES: Service[] = [
   {
     id: 'espacios-de-trabajo',
     title: 'ESPACIOS DE TRABAJO',
-    description: 'Mobiliario de oficina, equipamiento escolar, mobiliario auxiliar y complementos, …',
-    fullDescription: 'Diseñamos y equipamos entornos de trabajo productivos, ergonómicos y modernos. Desde mobiliario de oficina funcional hasta equipamiento escolar especializado, creamos espacios que inspiran y facilitan el desempeño diario.',
+    description: 'Diseñamos oficinas donde la gente quiere trabajar.',
+    fullDescription: 'Diseñamos oficinas donde la gente quiere trabajar. Mobiliario ergonómico, mamparas, suelos técnicos e iluminación. Creamos entornos productivos, cómodos y alineados con la imagen de tu compañía.',
     icon: 'Armchair',
     subServices: [
-      { title: 'MOBILIARIO DE OFICINA', description: 'Sillas de oficina, mesas, archivo, recepción, divisorias, espera, …', icon: 'Lightbulb' },
-      { title: 'EQUIPAMIENTO ESCOLAR', description: 'Sillas, mesas, pizarras, comunicación visual, …', icon: 'Presentation' },
-      { title: 'MOBILIARIO AUXILIAR Y COMPLEMENTOS', description: 'Percheros, papeleras, biombos y accesorios que completan su entorno de trabajo.', icon: 'FileText' },
+      { title: 'MOBILIARIO DE OFICINA', description: 'Sillas ergonómicas, mesas de trabajo y sistemas de archivo que combinan diseño y funcionalidad.', icon: 'Lightbulb' },
+      { title: 'EQUIPAMIENTO ESCOLAR', description: 'Mobiliario especializado para centros educativos: sillas, mesas y pizarras de alta durabilidad.', icon: 'Presentation' },
+      { title: 'MOBILIARIO AUXILIAR Y COMPLEMENTOS', description: 'Percheros, papeleras y biombos que completan y organizan tu entorno de trabajo.', icon: 'FileText' },
     ],
     collaborators: [
       { name: 'Planning Sisplamo', logo: '/images/collab-planning-sisplamo.png' },
@@ -94,15 +101,15 @@ export const SERVICES: Service[] = [
   {
     id: 'software-de-gestion',
     title: 'SOFTWARE DE GESTIÓN',
-    description: 'ERP / CRM / SGA / BPM',
-    fullDescription: 'Implementamos herramientas digitales potentes que optimizan sus procesos internos. Ofrecemos soluciones ERP, CRM, SGA y BPM personalizadas para mejorar la eficiencia operativa, el control de datos y la toma de decisiones estratégicas en su compañía.',
+    description: 'Digitaliza tu negocio para tener el control total.',
+    fullDescription: 'Digitaliza tu negocio para tener el control total. Implementamos soluciones ERP y software específico que simplifica tus procesos, ahorra tiempo y te ayuda a tomar mejores decisiones basadas en datos reales.',
     icon: 'Cloud',
     subServices: [
-      { title: 'ERP', description: 'Gestión comercial, económica y financiera.', icon: 'ExternalLink' },
-      { title: 'CRM', description: 'Gestión de clientes.', icon: 'Users' },
-      { title: 'MRP', description: 'Gestión integral de tareas, Gestión documental, Control de calidad y Control de la Producción.', icon: 'Layers' },
-      { title: 'SGA', description: 'Logística avanzada.', icon: 'Folder' },
-      { title: 'BPM', description: 'Portal corporativo, del proveedor y del cliente.', icon: 'Maximize' },
+      { title: 'ERP', description: 'Gestión comercial, económica y financiera integrada para un control total de tu negocio.', icon: 'ExternalLink' },
+      { title: 'CRM', description: 'Herramientas avanzadas para la gestión de relaciones con clientes y optimización de ventas.', icon: 'Users' },
+      { title: 'MRP', description: 'Gestión integral de tareas, producción y control de calidad para procesos industriales.', icon: 'Layers' },
+      { title: 'SGA', description: 'Soluciones de logística avanzada para la gestión eficiente de almacenes.', icon: 'Folder' },
+      { title: 'BPM', description: 'Portales corporativos y flujos de trabajo que conectan a tu empresa con proveedores y clientes.', icon: 'Maximize' },
     ],
     collaborators: [
       { name: 'Freeware', logo: '/images/collab-freeware.png' },
@@ -112,77 +119,28 @@ export const SERVICES: Service[] = [
 ];
 
 export const PROJECTS: Project[] = [
-  { 
-    id: 1, 
-    title: 'UNIVERSIDAD POPULAR - ARUCAS', 
-    category: 'Espacios de trabajo', 
-    image: '/images/Universidad Popular – Arucas.jpg', 
-    gallery: ['/images/Universidad Popular – Arucas 2.jpg', '/images/Universidad Popular – Arucas 3.jpg', '/images/Universidad Popular – Arucas 4.jpg'],
-    date: 'Enero 2024' 
-  },
-  { 
-    id: 2, 
-    title: 'INVENTIA PLUS', 
-    category: 'Imagen corporativa', 
-    image: './images/Inventia Plus.jpg', 
-    gallery: ['/images/Inventia Plus 2.jpg', '/images/Inventia Plus 3.jpg', '/images/Inventia Plus 4.jpg'],
-    date: 'Diciembre 2023' 
-  },
-  { 
-    id: 3, 
-    title: 'GRAN CANARIA ESPACIO DIGITAL', 
-    category: 'Audiovisuales', 
-    image: '/images/Gran Canaria Espacio Digital.jpg', 
-    gallery: ['/images/Gran Canaria Espacio Digital.jpg'],
-    date: 'Noviembre 2023' 
-  },
-  { 
-    id: 4, 
-    title: 'CENTRO DE REPROGRAFÍA E INFORMÁTICA DE LAS PALMAS', 
-    category: 'Espacios de trabajo', 
-    image: '/images/Centro de Reprografía e Informática de Las Palmas.jpg', 
-    gallery: ['/images/Centro de Reprografía e Informática de Las Palmas 2.jpg', '/images/Centro de Reprografía e Informática de Las Palmas 3.jpg', '/images/Centro de Reprografía e Informática de Las Palmas 4.jpg'],
-    date: 'Octubre 2023' 
-  },
-  { 
-    id: 5, 
-    title: 'AYUNTAMIENTO DE SANTA BRÍGIDA', 
-    category: 'Espacios de trabajo', 
-    image: '/images/ayuntamiento de santa brigida.jpg', 
-    gallery: ['/images/ayuntamiento de santa brigida 2.jpg', '/images/ayuntamiento de santa brigida 3.jpg', '/images/ayuntamiento de santa brigida 4.jpg', '/images/ayuntamiento de santa brigida 5.jpg'],
-    date: 'Septiembre 2023' 
-  },
-  { 
-    id: 6, 
-    title: 'VALLESECO', 
-    category: 'Espacios de trabajo', 
-    image: '/images/valleseco.jpg', 
-    gallery: ['/images/valleseco.jpg'],
-    date: 'Agosto 2023' 
-  },
-  { 
-    id: 7, 
-    title: 'VALSEQUILLO', 
-    category: 'Espacios de trabajo', 
-    image: '/images/valsequillo.jpg', 
-    gallery: ['/images/valsequillo.jpg'],
-    date: 'Julio 2023' 
-  },
+  project1,
+  project2,
+  project3,
+  project4,
+  project5,
+  project6,
+  project7,
 ];
 
 export const COLLABORATORS: Collaborator[] = [
-  { name: 'Palmart', logo: '/images/collab-palmart.png' },
-  { name: 'Freeware', logo: '/images/collab-freeware.png' },
-  { name: 'Nautilus', logo: '/images/collab-nautilus.png' },
-  { name: 'Dile', logo: '/images/collab-dile.png' },
-  { name: 'Actiu', logo: '/images/collab-actiu.png' },
-  { name: 'Made Design', logo: '/images/collab-made-design.png' },
-  { name: 'Planning Sisplamo', logo: '/images/collab-planning-sisplamo.png' },
-  { name: 'Bravour', logo: '/images/collab-bravour.png' },
-  { name: 'Epson', logo: '/images/collab-epson.png' },
-  { name: 'Dell', logo: '/images/collab-dell.png' },
-  { name: 'Tomplaprint Regalos', logo: '/images/collab-tomplaprint-regalos.png' },
-  { name: 'Tomplapac', logo: '/images/collab-tomplapac.png' },
-  { name: 'Ovelar', logo: '/images/collab-ovelar.png' },
   { name: 'Tomplalprint', logo: '/images/collab-tomplalprint.png' },
+  { name: 'Ovelar', logo: '/images/collab-ovelar.png' },
+  { name: 'Tomplapac', logo: '/images/collab-tomplapac.png' },
+  { name: 'Tomplaprint Regalos', logo: '/images/collab-tomplaprint-regalos.png' },
+  { name: 'Dell', logo: '/images/collab-dell.png' },
+  { name: 'Epson', logo: '/images/collab-epson.png' },
+  { name: 'Bravour', logo: '/images/collab-bravour.png' },
+  { name: 'Planning Sisplamo', logo: '/images/collab-planning-sisplamo.png' },
+  { name: 'Made Design', logo: '/images/collab-made-design.png' },
+  { name: 'Actiu', logo: '/images/collab-actiu.png' },
+  { name: 'Dile', logo: '/images/collab-dile.png' },
+  { name: 'Nautilus', logo: '/images/collab-nautilus.png' },
+  { name: 'Freeware', logo: '/images/collab-freeware.png' },
+  { name: 'Palmart', logo: '/images/collab-palmart.png' },
 ];

@@ -18,14 +18,12 @@ export const Projects = ({ onPageChange }: ProjectsProps) => {
 
   return (
     <div className="pt-20">
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold text-slate-900 mb-4 tracking-widest uppercase">PROYECTOS</h1>
-          <div className="flex items-center justify-center space-x-2 text-teal-500 text-sm font-medium">
-            <span>Home</span>
-            <span>/</span>
-            <span className="text-gray-400">Proyectos</span>
-          </div>
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Proyectos que hablan por sí solos.</h1>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            No hay mejor carta de presentación que un trabajo bien hecho. Aquí puedes ver una selección de proyectos en los que hemos ayudado a empresas de Gran Canaria a transformar sus espacios, mejorar su tecnología y fortalecer su imagen. Cada uno es diferente, pero todos tienen algo en común: la confianza de nuestros clientes y un resultado que supera las expectativas.
+          </p>
         </div>
       </section>
 

@@ -120,6 +120,30 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
             </div>
 
             <div className="space-y-6">
+              {project.description && (
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="FileText" className="w-5 h-5 text-teal-500" />
+                  </div>
+                  <div>
+                    <span className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Descripción</span>
+                    <p className="text-slate-700 font-medium leading-relaxed">{project.description}</p>
+                  </div>
+                </div>
+              )}
+
+              {project.challenge && (
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="Target" className="w-5 h-5 text-teal-500" />
+                  </div>
+                  <div>
+                    <span className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">El Desafío</span>
+                    <p className="text-slate-700 font-medium leading-relaxed">{project.challenge}</p>
+                  </div>
+                </div>
+              )}
+
               <div className="flex items-start space-x-4">
                 <div className="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Icon name="Calendar" className="w-5 h-5 text-teal-500" />

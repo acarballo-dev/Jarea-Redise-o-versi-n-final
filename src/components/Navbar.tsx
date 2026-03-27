@@ -15,6 +15,7 @@ export const Navbar = ({ currentPage, onPageChange }: NavbarProps) => {
 
   const navItems: { label: string; value: Page }[] = [
     { label: 'INICIO', value: 'home' },
+    { label: 'NOSOTROS', value: 'nosotros' },
     { label: 'PRODUCTOS', value: 'productos' },
     { label: 'PROYECTOS', value: 'proyectos' },
     { label: 'CONTACTO', value: 'contacto' },
