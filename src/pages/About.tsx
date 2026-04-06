@@ -18,9 +18,9 @@ export const About = ({ onPageChange }: AboutProps) => {
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h4 className="text-teal-400 font-bold tracking-widest uppercase mb-4">Quiénes Somos</h4>
+            <h4 className="text-teal-400 font-bold tracking-widest uppercase mb-4">Tu socio de confianza en Canarias</h4>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Tu socio de confianza en Gran Canaria
+              No vendemos productos ni servicios. Resolvemos los problemas de tu empresa.
             </h1>
           </div>
         </div>
@@ -31,21 +31,17 @@ export const About = ({ onPageChange }: AboutProps) => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">No vendemos productos. Resolvemos problemas.</h2>
               <p>
-                En Jarea Soluciones sabemos que cada empresa es diferente, y que un proveedor que simplemente sirve pedidos no es suficiente. Por eso trabajamos de otra manera: cuando nos contratas, pasamos a formar parte de tu equipo.
+                En Jarea Soluciones llevamos años ayudando a empresas, instituciones y profesionales de Canarias a funcionar mejor. Lo hacemos de una manera distinta a la de la mayoría de proveedores: en lugar de despachar pedidos, nos convertimos en parte de tu equipo.
               </p>
               <p>
-                Somos ágiles, comprometidos y apasionados por cada proyecto. Da igual si se trata de equipar una oficina, renovar tu imagen corporativa o gestionar una instalación compleja: lo abordamos con la misma exigencia y cuidado. Sin burocracia innecesaria. Sin letra pequeña.
-              </p>
-              <p className="font-bold text-slate-900">
-                Somos el socio que tu empresa estaba buscando.
+                Cuando nos contratas, no recibes un catálogo y una factura. Recibes un interlocutor que entiende tu negocio, que anticipa lo que necesitas y que se queda a tu lado mucho después de que el proyecto esté terminado.
               </p>
             </div>
             <div className="relative">
               <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://picsum.photos/seed/jarea-team/800/600" 
+                  src="/images/InventiaPlus.jpg" 
                   alt="Equipo Jarea Soluciones" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -57,34 +53,57 @@ export const About = ({ onPageChange }: AboutProps) => {
         </div>
       </section>
 
-      {/* Why Us */}
+      {/* Our History */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Nuestra historia</h2>
+            <div className="w-20 h-1 bg-teal-500 mx-auto mb-8"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-lg text-gray-600 leading-relaxed">
+            <div className="space-y-6">
+              <p>
+                Jarea Soluciones nació con una premisa sencilla pero exigente: ser la empresa que cualquier empresario querría tener como proveedor. Sin letra pequeña, sin tiempos de respuesta eternos, sin soluciones genéricas que no encajan con nadie.
+              </p>
+              <p>
+                Desde nuestra base en el Polígono Industrial de Las Salinetas, en Telde, hemos trabajado con todo tipo de organizaciones: desde pequeñas asesorías y despachos profesionales hasta organismos públicos. Cada proyecto nos ha enseñado algo nuevo y nos ha hecho mejores en lo que hacemos.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <p>
+                Somos una empresa pequeña por elección, no por limitación. El tamaño nos permite ser ágiles, cercanos y completamente volcados en cada cliente. No tenemos grandes estructuras que ralenticen las decisiones ni protocolos que pongan barreras entre tú y la persona que resuelve tu problema.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Us */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Lo que nos hace diferentes</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Por qué trabajar con nosotros</h2>
+            <p className="text-gray-600 text-lg">
+              Hay muchas empresas que pueden venderte un ordenador, diseñarte un logotipo o instalarte una pantalla. Lo que no encontrarás fácilmente es alguien que haga todo eso con el mismo nivel de atención...
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Un único interlocutor',
-                description: 'Gestionamos todo el proyecto, de principio a fin. No tienes que coordinar a varios proveedores, nosotros nos encargamos de todo.',
+                title: 'Un único punto de contacto',
+                description: 'Gestionamos proyectos integrales que combinan espacios de trabajo, equipamiento informático, imagen corporativa y más. No tienes que coordinar a cinco proveedores distintos: nosotros lo hacemos por ti.',
                 icon: 'Users'
               },
               {
-                title: 'Adaptados a tu presupuesto',
-                description: 'Ofrecemos soluciones para empresas de cualquier tamaño, optimizando cada inversión para que sea rentable.',
+                title: 'Asesoramiento sin compromiso',
+                description: 'Antes de recomendarte cualquier solución, nos tomamos el tiempo necesario para entender qué necesitas realmente. No tenemos interés en venderte más de lo que precisas.',
                 icon: 'Target'
               },
               {
-                title: 'Experiencia local',
-                description: 'Conocemos profundamente el tejido empresarial de Gran Canaria, sus particularidades y sus necesidades.',
-                icon: 'MapPin'
-              },
-              {
-                title: 'Ágiles y comprometidos',
-                description: 'Respondemos rápido y cumplimos lo que prometemos. Sin burocracia innecesaria que ralentice tu negocio.',
-                icon: 'Zap'
+                title: 'Capacidad para cualquier escala',
+                description: 'Da igual si necesitas renovar un puesto de trabajo o equipar una oficina completa. Hemos trabajado desde pequeños despachos hasta organismos del Gobierno Autónomo.',
+                icon: 'Maximize'
               }
             ].map((item, idx) => (
               <div key={idx} className="p-8 border border-gray-100 rounded-2xl hover:shadow-xl transition-shadow bg-white">
@@ -136,7 +155,7 @@ export const About = ({ onPageChange }: AboutProps) => {
                   'Somos ágiles: tomamos decisiones rápido y nos adaptamos sin burocracia.',
                   'Somos cercanos: conoces a la persona que lleva tu proyecto, no a un call center.',
                   'Somos integrales: cubrimos todas las necesidades de equipamiento y tecnología de tu empresa bajo un mismo techo.',
-                  'Somos locales: conocemos el mercado de Gran Canaria, sus particularidades y sus oportunidades.',
+                  'Somos locales: conocemos el mercado de Canarias, sus particularidades y sus oportunidades.',
                   'Somos honestos: si algo no encaja con lo que necesitas, te lo decimos aunque eso signifique perder una venta.'
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start space-x-3 text-gray-700">

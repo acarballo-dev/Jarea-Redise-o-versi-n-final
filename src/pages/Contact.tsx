@@ -92,6 +92,15 @@ export const Contact = () => {
       <section className="py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Hablemos. Sin compromisos.</h1>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            ¿Tienes un proyecto en mente? ¿Necesitas equipar tu oficina, mejorar tu imagen de marca o encontrar el software adecuado para tu empresa? Cuéntanos qué necesitas y te damos una respuesta en menos de 24 horas.
+          </p>
+          <p className="text-gray-600">
+            En Jarea Soluciones no esperamos a que nos llames con todo claro: nos gusta involucrarnos desde el principio para ayudarte a encontrar la mejor solución.
+          </p>
+          <p className="text-teal-600 font-bold mt-8 text-xl">
+            Tu próximo proyecto empieza con una conversación.
+          </p>
         </div>
       </section>
 

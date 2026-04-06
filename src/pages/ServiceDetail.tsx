@@ -56,6 +56,25 @@ export const ServiceDetail = ({ service, onPageChange }: ServiceDetailProps) => 
         </div>
       </section>
 
+      {/* Service Description */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-teal-600 tracking-tight">
+              {service.tagline}
+            </h2>
+            <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto">
+              {service.fullDescription}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Sub-services Grid */}
       {service.subServices && (
         <section className="py-24 bg-white">

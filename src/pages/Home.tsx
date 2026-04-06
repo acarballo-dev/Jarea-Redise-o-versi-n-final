@@ -29,6 +29,15 @@ export const Home = ({ onPageChange }: HomeProps) => {
             Tu empresa merece <br />
             <span className="text-teal-400">un socio, no un proveedor.</span>
           </motion.h1>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto"
+          >
+            Gestionamos proyectos, equipamiento e instalaciones para que tú solo tengas que preocuparte de lo que realmente importa: hacer crecer tu negocio.
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -91,12 +100,10 @@ export const Home = ({ onPageChange }: HomeProps) => {
             </div>
             <div className="lg:w-1/2 space-y-6">
               <span className="text-teal-500 font-bold text-sm tracking-widest uppercase">QUIÉNES SOMOS</span>
-              <h2 className="text-4xl font-bold text-slate-900 tracking-tight">No vendemos productos. Resolvemos problemas.</h2>
+              <h2 className="text-4xl font-bold text-slate-900 tracking-tight">Tu socio de confianza en Canarias</h2>
+              <p className="text-xl font-medium text-teal-600">No vendemos productos ni servicios. Resolvemos los problemas de tu empresa.</p>
               <p className="text-gray-600 leading-relaxed">
-                En Jarea Soluciones sabemos que cada empresa es diferente, y que un proveedor que simplemente sirve pedidos no es suficiente. Por eso trabajamos de otra manera: cuando nos contratas, pasamos a formar parte de tu equipo.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Somos ágiles, comprometidos y apasionados por cada proyecto. Da igual si se trata de equipar una oficina, renovar tu imagen corporativa o gestionar una instalación compleja: lo abordamos con la misma exigencia y cuidado.
+                En Jarea Soluciones llevamos años ayudando a empresas, instituciones y profesionales de Canarias a funcionar mejor. Lo hacemos de una manera distinta: en lugar de despachar pedidos, nos convertimos en parte de tu equipo.
               </p>
               <button 
                 onClick={() => onPageChange('nosotros')}

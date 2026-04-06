@@ -21,6 +21,12 @@ export const Projects = ({ onPageChange }: ProjectsProps) => {
       <section className="py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Proyectos que hablan por sí solos.</h1>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Cada proyecto es una historia de confianza: la de un cliente que nos abrió las puertas de su empresa y nosotros le devolvimos resultados. Ayuntamientos, universidades, asesorías, empresas privadas… todos con un denominador común: solución a medida, entrega en plazo.
+          </p>
+          <p className="text-teal-600 font-bold mt-6">
+            ¿Tu empresa podría ser la próxima historia de éxito?
+          </p>
         </div>
       </section>
 
