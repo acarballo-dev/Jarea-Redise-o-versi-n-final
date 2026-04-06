@@ -134,44 +134,6 @@ export const Home = ({ onPageChange }: HomeProps) => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">Lo que dicen nuestros clientes</h2>
-            <div className="w-20 h-1 bg-teal-500 mx-auto"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                text: "Jarea Soluciones se ha convertido en nuestro socio tecnológico de confianza. Su capacidad de respuesta y profesionalidad son excepcionales.",
-                author: "Director IT",
-                company: "Institución Educativa"
-              },
-              {
-                text: "Equiparon nuestra nueva oficina en tiempo récord y con un resultado impecable. Entienden perfectamente lo que necesita una empresa moderna.",
-                author: "Gerente",
-                company: "Despacho Profesional"
-              },
-              {
-                text: "La mejor decisión que tomamos fue confiarles nuestra imagen corporativa y el software de gestión. Un servicio integral de primer nivel.",
-                author: "Propietario",
-                company: "Empresa de Servicios"
-              }
-            ].map((testimonial, idx) => (
-              <div key={idx} className="bg-gray-50 p-8 rounded-2xl relative">
-                <Icon name="Quote" className="w-10 h-10 text-teal-500/20 absolute top-6 right-6" />
-                <p className="text-gray-600 italic mb-6 leading-relaxed">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-bold text-slate-900">{testimonial.author}</p>
-                  <p className="text-sm text-teal-600">{testimonial.company}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Collaborators */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
