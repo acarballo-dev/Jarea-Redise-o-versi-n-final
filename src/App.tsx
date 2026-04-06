@@ -18,7 +18,7 @@ import { InfoGeneral } from './pages/InfoGeneral';
 import { AvisoLegal } from './pages/AvisoLegal';
 import { Privacidad } from './pages/Privacidad';
 import { Cookies } from './pages/Cookies';
-import { SERVICES } from './constants';
+import { SERVICES, PROJECTS } from './constants';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -30,21 +30,58 @@ export default function App() {
     window.scrollTo(0, 0);
   }, [currentPage, selectedService, selectedProject]);
 
-  const handlePageChange = (page: Page, data?: Service | Project) => {
+  const handlePageChange = (page: Page, data?: Service | Project, pushState = true) => {
     if (page === 'service-detail' && data) {
       setSelectedService(data as Service);
       setSelectedProject(null);
       setCurrentPage('service-detail');
+      if (pushState) {
+        window.history.pushState({ page, dataId: (data as Service).id }, '', '');
+      }
     } else if (page === 'project-detail' && data) {
       setSelectedProject(data as Project);
       setSelectedService(null);
       setCurrentPage('project-detail');
+      if (pushState) {
+        window.history.pushState({ page, dataId: (data as Project).id }, '', '');
+      }
     } else {
       setSelectedService(null);
       setSelectedProject(null);
       setCurrentPage(page);
+      if (pushState) {
+        window.history.pushState({ page }, '', '');
+      }
     }
   };
+
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      if (event.state) {
+        const { page, dataId } = event.state;
+        if (page === 'service-detail' && dataId) {
+          const service = SERVICES.find(s => s.id === dataId);
+          handlePageChange(page, service, false);
+        } else if (page === 'project-detail' && dataId) {
+          const project = PROJECTS.find(p => p.id === Number(dataId));
+          handlePageChange(page, project, false);
+        } else {
+          handlePageChange(page, undefined, false);
+        }
+      } else {
+        handlePageChange('home', undefined, false);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    
+    // Initial state setup
+    if (!window.history.state) {
+      window.history.replaceState({ page: 'home' }, '', '');
+    }
+
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   const renderPage = () => {
     switch (currentPage) {
