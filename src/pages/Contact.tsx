@@ -92,9 +92,6 @@ export const Contact = () => {
       <section className="py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Hablemos. Sin compromisos.</h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Si estás buscando un socio de confianza para equipar, mejorar o digitalizar tu empresa en Gran Canaria, nos encantaría conocer tu proyecto. Cuéntanos qué necesitas y te daremos una respuesta en menos de 24 horas. Sin letra pequeña y con soluciones reales.
-          </p>
         </div>
       </section>
 

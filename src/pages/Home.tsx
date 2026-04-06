@@ -29,14 +29,6 @@ export const Home = ({ onPageChange }: HomeProps) => {
             Tu empresa merece <br />
             <span className="text-teal-400">un socio, no un proveedor.</span>
           </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto"
-          >
-            Gestionamos proyectos, equipamiento e instalaciones para que tú solo tengas que preocuparte de lo que realmente importa: hacer crecer tu negocio.
-          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

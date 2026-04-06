@@ -78,7 +78,6 @@ export default function App() {
         return <Cookies />;
       case 'productos':
       case 'servicios':
-      case 'nosotros':
         // For demo purposes, these link to home or a generic service detail
         return <Home onPageChange={handlePageChange} />;
       default:

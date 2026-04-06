@@ -22,9 +22,6 @@ export const About = ({ onPageChange }: AboutProps) => {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Tu socio de confianza en Gran Canaria
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              No vendemos productos ni servicios. Resolvemos los problemas de tu empresa.
-            </p>
           </div>
         </div>
       </section>
